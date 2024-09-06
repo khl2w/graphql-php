@@ -131,18 +131,7 @@ class FieldsOnCorrectType extends ValidationRule
         array $suggestedTypeNames,
         array $suggestedFieldNames
     ): string {
-        $message = "Cannot query field \"{$fieldName}\" on type \"{$type}\".";
-
-        if ($suggestedTypeNames !== []) {
-            $suggestions = Utils::quotedOrList($suggestedTypeNames);
-
-            $message .= " Did you mean to use an inline fragment on {$suggestions}?";
-        } elseif ($suggestedFieldNames !== []) {
-            $suggestions = Utils::quotedOrList($suggestedFieldNames);
-
-            $message .= " Did you mean {$suggestions}?";
-        }
-
-        return $message;
+    
+        return '';
     }
 }
